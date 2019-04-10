@@ -26,15 +26,29 @@ public class TpEntradaSalida
         
         System.out.println("------------------------------------");
         
-        FuncionesEstaticas.SumarConRetorno(4, 6);
+        int suma;
+        suma=FuncionesEstaticas.SumarConRetorno(4, 6);
+        
+        System.out.println(suma);
         
         System.out.println("------------------------------------");
         
-        FuncionesEstaticas.Promedio(4, 6, 2);
+        double Promedio;
+        
+        Promedio = FuncionesEstaticas.Promedio(4, 6, 2);
+        
+        System.out.println(Promedio);
         
         System.out.println("------------------------------------");
         
+        float Perimetro;
         
+        Perimetro = FuncionesEstaticas.PerimetroCuadrado(10);
         
+        System.out.println(Perimetro);
+        
+        System.out.println("------------------------------------");
+        
+        FuncionesEstaticas.PromedioRectangulo();
     }
 }

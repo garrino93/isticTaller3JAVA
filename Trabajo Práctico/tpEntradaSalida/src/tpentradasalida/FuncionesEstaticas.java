@@ -42,11 +42,21 @@ public class FuncionesEstaticas
     }
     public static double Promedio(int numero1, int numero2, int numero3)
     {
-        double Promedio;
-        
-        Promedio = (numero1 + numero2 + numero3) / 3;
+
+        double Promedio = (numero1 + numero2 + numero3) / 3;
         
         return Promedio;
+    }
+    public static float PerimetroCuadrado(float base)
+    {
+        float Perimetro = 4 * base;
+        
+        return Perimetro;
+    }
+    
+    public static void PromedioRectangulo(float largo, float ancho)
+    {
+        
     }
 }
     
