@@ -28,7 +28,7 @@ public class Instancias {
         UnCal.NumeroDos = 15;
         UnCal.Sumar();
         
-        System.out.println("El resultado es" + UnCal.Resultado);
+        System.out.println("El resultado es " + UnCal.Resultado);
     }
     
 }
