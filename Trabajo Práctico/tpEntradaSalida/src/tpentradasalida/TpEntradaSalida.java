@@ -49,6 +49,12 @@ public class TpEntradaSalida
         
         System.out.println("------------------------------------");
         
-        FuncionesEstaticas.PromedioRectangulo();
+        //FuncionesEstaticas.PromedioRectangulo();
+        
+        //float Perimetro;
+        
+        //Perimetro = FuncionesEstaticas.PerimetroRectangulo(10);
+        
+        //System.out.println(Perimetro);
     }
 }

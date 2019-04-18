@@ -54,9 +54,11 @@ public class FuncionesEstaticas
         return Perimetro;
     }
     
-    public static void PromedioRectangulo(float largo, float ancho)
+    public static void PromedioRectangulo(float altura, float base)
     {
+        //float Perimetro = 4 * base;
         
+        //return Perimetro;
     }
 }
     
