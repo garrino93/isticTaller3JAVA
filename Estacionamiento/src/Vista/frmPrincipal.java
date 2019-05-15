@@ -1,5 +1,9 @@
 package Vista;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class frmPrincipal extends javax.swing.JFrame {
 
     /**
@@ -8,6 +12,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     public frmPrincipal()
     {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -23,6 +28,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnSalida = new javax.swing.JButton();
         btnNose = new javax.swing.JButton();
         btnReporte = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        btnMenu = new javax.swing.JMenu();
+        btnmenuIngresar = new javax.swing.JMenuItem();
+        btnmenuSacar = new javax.swing.JMenuItem();
+        btnInformes = new javax.swing.JMenu();
+        btnListado = new javax.swing.JMenu();
+        btnmenuEstacionados = new javax.swing.JMenuItem();
+        btnmenuFacturados = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +61,48 @@ public class frmPrincipal extends javax.swing.JFrame {
         });
 
         btnReporte.setText("Reporte");
+
+        btnMenu.setText("Vehiculos");
+
+        btnmenuIngresar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
+        btnmenuIngresar.setText("Ingresar");
+        btnmenuIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuIngresarActionPerformed(evt);
+            }
+        });
+        btnMenu.add(btnmenuIngresar);
+
+        btnmenuSacar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
+        btnmenuSacar.setText("Sacar");
+        btnmenuSacar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuSacarActionPerformed(evt);
+            }
+        });
+        btnMenu.add(btnmenuSacar);
+
+        jMenuBar1.add(btnMenu);
+
+        btnInformes.setText("Informes");
+        jMenuBar1.add(btnInformes);
+
+        btnListado.setText("Listado");
+
+        btnmenuEstacionados.setText("Estacionados");
+        btnmenuEstacionados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuEstacionadosActionPerformed(evt);
+            }
+        });
+        btnListado.add(btnmenuEstacionados);
+
+        btnmenuFacturados.setText("Facturados");
+        btnListado.add(btnmenuFacturados);
+
+        jMenuBar1.add(btnListado);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,7 +132,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNose, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -95,7 +150,32 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
         frmSalida objSalida = new frmSalida();
         objSalida.setVisible(true);
+        objSalida.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_btnSalidaActionPerformed
+
+    private void btnmenuIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuIngresarActionPerformed
+        //System.out.println("Fue presionado");
+        frmIngreso objIngreso = new frmIngreso();
+        objIngreso.setVisible(true);
+        objIngreso.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_btnmenuIngresarActionPerformed
+
+    private void btnmenuSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuSacarActionPerformed
+        frmSalida objSalida = new frmSalida();
+        objSalida.setVisible(true);
+        objSalida.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_btnmenuSacarActionPerformed
+
+    private void btnmenuEstacionadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuEstacionadosActionPerformed
+        frmListado objListado = null;
+        try {
+            objListado = new frmListado();
+        } catch (IOException ex) {
+            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        objListado.setVisible(true);
+        objListado.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_btnmenuEstacionadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,9 +213,17 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu btnInformes;
     private javax.swing.JButton btnIngreso;
+    private javax.swing.JMenu btnListado;
+    private javax.swing.JMenu btnMenu;
     private javax.swing.JButton btnNose;
     private javax.swing.JButton btnReporte;
     private javax.swing.JButton btnSalida;
+    private javax.swing.JMenuItem btnmenuEstacionados;
+    private javax.swing.JMenuItem btnmenuFacturados;
+    private javax.swing.JMenuItem btnmenuIngresar;
+    private javax.swing.JMenuItem btnmenuSacar;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
